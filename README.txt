@@ -24,6 +24,19 @@ How to preview
 --------------
 Open index.html in a web browser. The Watch navigation dropdown opens the live stream and past-services archive.
 
+Mobile support
+--------------
+The complete website and administrator portal are optimized for phones and tablets. Mobile behavior includes:
+
+- A keyboard-accessible, touch-friendly navigation drawer
+- Automatic navigation reset after rotating or resizing the device
+- Safe spacing for modern phones with screen notches
+- Full-width actions and 48-pixel minimum touch controls
+- Responsive video players and a phone-sized video modal
+- Single-column forms, cards, schedules, and administrator tools
+- 16-pixel mobile form fields to prevent unwanted browser zoom
+- A compact mobile administrator sign-in screen
+
 How to publish
 --------------
 Upload the entire faithfinders-redesign folder to the web host. Keep the filenames and assets folder unchanged so links, styling, and scripts continue to work.
