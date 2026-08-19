@@ -1,0 +1,70 @@
+FaithFinders Administrator Portal — Final Setup
+================================================
+
+CURRENT STATUS
+--------------
+The FaithFinders website is already connected to the FaithFindersWeb Supabase project.
+
+The following work is complete:
+- The service_videos and admin_users tables are installed.
+- Row-level security policies are enabled.
+- The public service-videos storage bucket is installed.
+- The three existing Facebook services are in the video library.
+- supabase-config.js contains the browser-safe publishable key.
+- The Supabase security audit is clean.
+
+Do not rerun supabase-setup.sql unless the database is being rebuilt in a new Supabase project.
+
+1. Replace the exposed legacy service-role key
+----------------------------------------------
+The website does not use or require the legacy anon JWT or service-role key.
+
+Open Project Settings > API Keys in Supabase.
+
+If no private backend uses the legacy service-role key, disable it. If another private backend still uses it, create a new sb_secret_... key, update that backend, and then disable the exposed legacy key.
+
+Never put an sb_secret_... key, service_role key, database password, or JWT signing secret in HTML, JavaScript, GitHub, or this setup file.
+
+2. Create the administrator login
+---------------------------------
+Open Authentication > Users in Supabase.
+Create the administrator user with the email address and password the church will use.
+
+Do not place the password in SQL or website files.
+In the project's Auth settings, require a strong password. If the project uses a Supabase Pro plan or above, also enable leaked-password protection.
+
+Return to SQL Editor and run the statement below after replacing ADMIN_EMAIL@example.com with the administrator's actual email address:
+
+insert into public.admin_users (user_id)
+select id from auth.users
+where lower(email) = lower('ADMIN_EMAIL@example.com')
+on conflict (user_id) do nothing;
+
+Only an existing Supabase Authentication user can be added as an administrator.
+
+3. Publish the website
+----------------------
+Upload the complete faithfinders-redesign folder to the website host. Keep all filenames and the assets folder unchanged.
+
+4. Use the portal
+-----------------
+Open admin.html on the published website and sign in with the authorized administrator account.
+
+Administrators can:
+- Upload MP4, WebM, MOV, or OGG service videos.
+- Paste Facebook, YouTube, or Vimeo links.
+- Add optional thumbnail images.
+- Publish, hide, edit, feature, or delete videos.
+
+Public video page: watch.html
+Administrator portal: admin.html
+
+Security Notes
+--------------
+- Only accounts listed in admin_users can manage videos.
+- Visitors can read only published video records.
+- Uploaded files are stored in the service-videos bucket.
+- The administrator portal is excluded from search engine indexing.
+- Deleting a video from the portal also removes its uploaded files.
+- The publishable key is safe for browser use because access is enforced by row-level security.
+- Leaked-password protection is recommended when the Supabase plan supports it.

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Watch FaithFinders Church live online and browse past worship services and messages." />
+  <title>Watch | FaithFinders Church</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="watch-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="announcement">
+    <div class="container announcement__inner">
+      <span>Worship with FaithFinders wherever you are.</span>
+      <a href="#archive">Browse past services <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="FaithFinders Church home">
+        <span class="brand-mark" aria-hidden="true"><img src="assets/faithfinders-logo.png" alt="" /></span>
+        <span class="brand-copy"><strong>FaithFinders</strong><small>Church</small></span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Toggle navigation</span><span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="index.html#welcome">Welcome</a>
+        <a href="about-us.html">About</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown__toggle" type="button" aria-expanded="false" aria-haspopup="true">
+            Explore <span aria-hidden="true">⌄</span>
+          </button>
+          <div class="nav-dropdown__menu">
+            <a href="vision.html">
+              <strong>Our Vision</strong>
+              <small>Discover the future we believe for.</small>
+            </a>
+            <a href="service-times.html">
+              <strong>Service Times</strong>
+              <small>Find a gathering and plan your visit.</small>
+            </a>
+          </div>
+        </div>
+        <div class="nav-dropdown nav-current-parent">
+          <button class="nav-dropdown__toggle" type="button" aria-expanded="false" aria-haspopup="true">
+            Watch <span aria-hidden="true">⌄</span>
+          </button>
+          <div class="nav-dropdown__menu">
+            <a href="#live" aria-current="page">
+              <strong>Live Stream</strong>
+              <small>Join a FaithFinders service online.</small>
+            </a>
+            <a href="#archive">
+              <strong>Past Services</strong>
+              <small>Watch messages and services on demand.</small>
+            </a>
+          </div>
+        </div>
+        <a href="give.html">Give</a>
+        <a href="index.html#visit">Visit</a>
+        <a href="index.html#contact">Contact</a>
+        <a class="button button--small" href="index.html#contact">Connect With Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero--watch" aria-labelledby="watch-title">
+      <div class="container page-hero__inner">
+        <div class="breadcrumbs"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Watch</span></div>
+        <p class="eyebrow">FaithFinders online</p>
+        <h1 id="watch-title">Worship with us <em>wherever you are.</em></h1>
+        <p class="page-hero__lead">Join a service live or revisit worship, messages, and special gatherings from the FaithFinders video library.</p>
+      </div>
+    </section>
+
+    <section class="section live-section" id="live" aria-labelledby="live-title">
+      <div class="container live-layout">
+        <div class="live-main reveal">
+          <div class="media-section-heading">
+            <div>
+              <p class="eyebrow">Featured service</p>
+              <h2 id="live-title">Watch the service.</h2>
+            </div>
+            <div class="stream-status" id="stream-status" aria-live="polite">
+              <span class="stream-status__dot" aria-hidden="true"></span>
+              <span id="stream-status-text">Facebook Live</span>
+            </div>
+          </div>
+
+          <div class="live-player" id="live-player">
+            <div class="live-player__placeholder" id="live-placeholder">
+              <span class="live-player__icon" aria-hidden="true">▶</span>
+              <h3>Watch FaithFinders live on Facebook.</h3>
+              <p>Visit our Facebook page for live services, past videos, announcements, and church information.</p>
+              <a class="button" href="https://www.facebook.com/faithfinderschurchmi" target="_blank" rel="noopener">Open Facebook Live <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <p class="player-note">This clean Facebook player shows only the service video. Comments and Facebook post text are hidden.</p>
+        </div>
+
+        <aside class="live-sidebar reveal">
+          <p class="eyebrow">Weekly gathering</p>
+          <h2>Sunday worship</h2>
+          <div class="live-time"><strong>10:15</strong><span>AM</span></div>
+          <p>Join us online for Sunday Morning Service from 10:15 AM to 12:15 PM, or attend in person at 229 W. Second Street in Constantine.</p>
+          <div class="live-sidebar__actions">
+            <a class="button" href="service-times.html">All Service Times</a>
+            <a class="text-link dark" href="index.html#contact">Ask a question <span aria-hidden="true">→</span></a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section archive-section" id="archive" aria-labelledby="archive-title">
+      <div class="container">
+        <div class="archive-heading reveal">
+          <div>
+            <p class="eyebrow">Video library</p>
+            <h2 id="archive-title">Past live videos.</h2>
+            <p>Browse the growing FaithFinders video bank by date, search for a service, and watch each message in a clean video-only player.</p>
+          </div>
+          <div class="archive-controls" aria-label="Past service filters">
+            <label class="media-search">
+              <span class="sr-only">Search past services</span>
+              <input id="service-search" type="search" placeholder="Search services" autocomplete="off" />
+            </label>
+            <label>
+              <span class="sr-only">Filter by year</span>
+              <select id="service-year">
+                <option value="all">All years</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="service-video-grid" id="service-video-grid" aria-live="polite"></div>
+
+        <div class="archive-empty reveal" id="archive-empty">
+          <span class="archive-empty__icon" aria-hidden="true">▣</span>
+          <h3>FaithFinders past live videos.</h3>
+          <p>Play public services in the embedded feed without leaving this website. The complete Facebook archive is also connected below.</p>
+          <div class="archive-empty__actions">
+            <a class="button" href="#live">Watch on This Page</a>
+            <a class="button button--outline" href="https://www.facebook.com/faithfinderschurchmi/live_videos" target="_blank" rel="noopener">Complete Past Live Archive <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="watch-help">
+      <div class="container watch-help__inner reveal">
+        <div>
+          <p class="eyebrow">Need prayer or support?</p>
+          <h2>We are still here for you online.</h2>
+          <p>Send a prayer request or let the church know how we can help.</p>
+        </div>
+        <a class="button button--light" href="index.html#contact">Connect With FaithFinders</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="video-modal" id="video-modal" hidden>
+    <div class="video-modal__backdrop" data-close-video></div>
+    <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
+      <button class="video-modal__close" type="button" data-close-video aria-label="Close video">×</button>
+      <div class="video-modal__player" id="video-modal-player"></div>
+      <div class="video-modal__copy">
+        <p class="eyebrow" id="video-modal-date"></p>
+        <h2 id="video-modal-title">Service video</h2>
+        <p id="video-modal-meta"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand--footer" href="index.html">
+          <span class="brand-mark" aria-hidden="true"><img src="assets/faithfinders-logo.png" alt="" /></span>
+          <span class="brand-copy"><strong>FaithFinders</strong><small>Church</small></span>
+        </a>
+        <p>A welcoming community centered on Jesus Christ, people, and relationships.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="about-us.html">About Us</a>
+        <a href="vision.html">Our Vision</a>
+        <a href="service-times.html">Service Times</a>
+        <a href="#live">Watch Live</a>
+        <a href="#archive">Past Services</a>
+        <a href="give.html">Give</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <a href="tel:+12694357474">(269) 435-7474</a>
+        <a href="mailto:rgafaithfinder@yahoo.com">Email the Church</a>
+        <a href="https://www.facebook.com/faithfinderschurchmi" target="_blank" rel="noopener">Facebook</a>
+        <a href="admin.html">Administrator Portal</a>
+        <span>Constantine, Michigan</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> FaithFinders Church. All rights reserved.</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="supabase-config.js"></script>
+  <script src="media-config.js"></script>
+  <script src="media.js"></script>
+</body>
+</html>

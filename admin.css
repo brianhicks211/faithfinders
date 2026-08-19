@@ -1,0 +1,173 @@
+.admin-page { min-height: 100vh; background: #f4f0e6; }
+.admin-page [hidden] { display: none !important; }
+.admin-header { position: relative; z-index: 20; border-bottom: 1px solid rgba(7,24,35,.1); background: rgba(248,245,237,.96); backdrop-filter: blur(18px); }
+.admin-header__inner { min-height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.admin-site-link { display: inline-flex; align-items: center; gap: 8px; color: var(--navy-900); font-size: .82rem; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.admin-site-link span { color: var(--gold-500); }
+
+.admin-hero { position: relative; overflow: hidden; color: white; background-image: linear-gradient(90deg, rgba(4,16,24,.96), rgba(9,35,47,.83) 52%, rgba(20,65,68,.5)), url("assets/faithfinders-hero-mural.png"); background-position: center 39%; background-size: cover; }
+.admin-hero::before { content: ""; position: absolute; inset: 0; opacity: .2; background-image: linear-gradient(rgba(240,214,150,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(240,214,150,.1) 1px, transparent 1px); background-size: 50px 50px; mask-image: linear-gradient(to right, #000, transparent 88%); }
+.admin-hero::after { content: ""; position: absolute; right: -110px; top: -160px; width: 430px; height: 430px; border: 72px solid rgba(215,165,72,.18); border-radius: 50%; }
+.admin-hero__inner { position: relative; z-index: 2; min-height: 420px; display: grid; grid-template-columns: 1fr 350px; gap: 80px; align-items: center; padding-block: 72px; }
+.admin-hero h1 { max-width: 780px; margin: 0 0 22px; font-size: clamp(3.2rem, 6vw, 5.8rem); }
+.admin-hero h1 em { color: var(--gold-300); }
+.admin-hero__inner > div:first-child > p:last-child { max-width: 690px; margin: 0; color: rgba(255,255,255,.75); font-size: 1.08rem; }
+.admin-hero__seal { display: flex; align-items: center; gap: 17px; padding: 26px; border: 1px solid rgba(240,214,150,.32); border-radius: 22px; background: rgba(7,24,35,.68); box-shadow: 0 26px 60px rgba(0,0,0,.18); backdrop-filter: blur(16px); }
+.admin-hero__seal > span { width: 50px; height: 50px; flex: 0 0 50px; display: grid; place-items: center; border: 1px solid rgba(240,214,150,.48); border-radius: 50%; color: var(--gold-300); }
+.admin-hero__seal div { display: grid; }
+.admin-hero__seal strong { color: white; font-family: Georgia, serif; font-size: 1.25rem; font-weight: 500; }
+.admin-hero__seal small { color: rgba(255,255,255,.55); font-size: .72rem; }
+
+.admin-workspace { min-height: 620px; padding: 76px 0 110px; }
+.admin-notice { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: start; max-width: 900px; margin: 0 auto; padding: 30px 34px; border: 1px solid #dfc27f; border-radius: 22px; background: #fff8e7; box-shadow: var(--shadow-soft); }
+.admin-notice__icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: var(--gold-500); color: var(--navy-950); font-family: Georgia, serif; font-size: 1.25rem; font-weight: 700; }
+.admin-notice h2 { margin: 0 0 9px; font-size: 1.75rem; }
+.admin-notice p { margin: 0; color: #67572f; }
+.admin-setup-steps { max-width: 900px; margin: 22px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.admin-setup-steps article { min-height: 195px; padding: 28px 25px; border: 1px solid rgba(7,24,35,.09); border-radius: 18px; background: rgba(255,255,255,.72); box-shadow: 0 14px 36px rgba(7,24,35,.05); }
+.admin-setup-steps article > span { display: block; margin-bottom: 28px; color: var(--gold-500); font-family: Georgia, serif; font-size: 1.35rem; }
+.admin-setup-steps h3 { margin-bottom: 9px; font-family: Georgia, serif; font-size: 1.3rem; font-weight: 500; }
+.admin-setup-steps p { margin: 0; color: var(--muted); font-size: .85rem; }
+
+.admin-login { max-width: 970px; margin: 0 auto; overflow: hidden; display: grid; grid-template-columns: .95fr 1.05fr; border: 1px solid rgba(7,24,35,.09); border-radius: 30px; background: white; box-shadow: var(--shadow); }
+.admin-login__visual { position: relative; min-height: 560px; display: flex; flex-direction: column; justify-content: flex-end; padding: 56px 50px; overflow: hidden; color: white; background-image: linear-gradient(145deg, rgba(7,24,35,.82), rgba(22,75,76,.68)), url("assets/faithfinders-hero-mural.png"); background-position: center; background-size: cover; }
+.admin-login__visual::before { content: ""; position: absolute; width: 290px; height: 290px; right: -100px; top: -90px; border: 55px solid rgba(240,214,150,.22); border-radius: 50%; }
+.admin-login__visual > * { position: relative; z-index: 1; }
+.admin-login__visual > span { color: var(--gold-300); font-size: .72rem; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; }
+.admin-login__visual > strong { margin: 15px 0 25px; font-family: Georgia, serif; font-size: 4rem; font-weight: 500; line-height: .95; }
+.admin-login__visual > p { max-width: 340px; margin: 0; color: rgba(255,255,255,.69); }
+.admin-login__form { display: flex; flex-direction: column; justify-content: center; padding: 58px 56px; }
+.admin-login__form h2 { margin-bottom: 12px; }
+.admin-login__form > p:not(.eyebrow):not(.admin-form-status) { margin: 0 0 30px; color: var(--muted); }
+.admin-login__form label, .admin-editor label { display: grid; gap: 8px; margin-bottom: 19px; color: var(--navy-900); font-size: .82rem; font-weight: 850; }
+.admin-login__form input, .admin-editor input, .admin-editor textarea { border-radius: 13px; background: #fcfbf8; }
+.admin-login__form .button { width: 100%; margin-top: 5px; }
+.admin-form-status { min-height: 24px; margin: 15px 0 0; color: var(--teal-600); font-size: .86rem; font-weight: 800; }
+.admin-form-status.is-error { color: #9d2e36; }
+
+.admin-dashboard { max-width: 1400px; margin: 0 auto; }
+.dashboard-toolbar { display: flex; justify-content: space-between; gap: 38px; align-items: end; margin-bottom: 34px; }
+.dashboard-toolbar h2 { margin-bottom: 8px; font-size: clamp(2.5rem, 4vw, 4rem); }
+.dashboard-toolbar > div:first-child > p:last-child { margin: 0; color: var(--muted); }
+.dashboard-toolbar__actions { display: flex; gap: 13px; align-items: center; }
+.admin-logout, .admin-text-button, .admin-refresh { border: 0; background: transparent; color: var(--navy-900); cursor: pointer; font-weight: 850; }
+.admin-logout { padding: 13px 9px; }
+.admin-logout:hover, .admin-text-button:hover { color: var(--teal-600); }
+
+.admin-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; margin-bottom: 26px; }
+.admin-stats article { position: relative; overflow: hidden; display: flex; align-items: end; justify-content: space-between; gap: 20px; min-height: 124px; padding: 26px 29px; border: 1px solid rgba(7,24,35,.09); border-radius: 20px; background: rgba(255,255,255,.7); box-shadow: 0 14px 36px rgba(7,24,35,.06); }
+.admin-stats article::after { content: ""; position: absolute; width: 90px; height: 90px; right: -35px; top: -35px; border: 18px solid rgba(215,165,72,.1); border-radius: 50%; }
+.admin-stats span { color: var(--muted); font-size: .72rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.admin-stats strong { color: var(--navy-950); font-family: Georgia, serif; font-size: 2.5rem; font-weight: 500; line-height: 1; }
+
+.admin-grid { display: grid; grid-template-columns: minmax(0, .94fr) minmax(420px, 1.06fr); gap: 26px; align-items: start; }
+.admin-panel { border: 1px solid rgba(7,24,35,.09); border-radius: 26px; background: white; box-shadow: var(--shadow-soft); }
+.admin-editor { padding: 38px; }
+.admin-library { position: sticky; top: 24px; min-height: 630px; overflow: hidden; }
+.admin-panel__heading { display: flex; align-items: start; justify-content: space-between; gap: 22px; margin-bottom: 28px; }
+.admin-panel__heading h2 { margin: 0; font-size: 2.35rem; }
+.admin-panel__heading .eyebrow { margin-bottom: 10px; }
+.admin-text-button { padding: 10px 0; color: var(--teal-600); }
+.admin-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.source-picker { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 25px 0 20px; padding: 0; border: 0; }
+.source-picker legend { grid-column: 1 / -1; margin-bottom: 8px; color: var(--navy-900); font-size: .82rem; font-weight: 850; }
+.source-picker label { position: relative; margin: 0; }
+.source-picker input { position: absolute; opacity: 0; pointer-events: none; }
+.source-picker label > span { min-height: 84px; display: grid; align-content: center; gap: 3px; padding: 16px 18px; border: 1.5px solid var(--line); border-radius: 15px; background: #fbfaf6; cursor: pointer; transition: border-color .2s ease, background .2s ease, box-shadow .2s ease; }
+.source-picker input:checked + span { border-color: var(--gold-500); background: var(--gold-100); box-shadow: 0 0 0 3px rgba(215,165,72,.1); }
+.source-picker strong { color: var(--navy-900); }
+.source-picker small { color: var(--muted); font-weight: 600; }
+
+.file-drop { position: relative; padding: 19px 20px; border: 1px dashed rgba(7,24,35,.27); border-radius: 15px; background: #fbfaf6; cursor: pointer; }
+.file-drop:hover { border-color: var(--teal-500); }
+.file-drop input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.file-drop span { color: var(--navy-900); font-weight: 850; }
+.file-drop small { color: var(--muted); font-weight: 600; }
+.file-drop.has-file { border-style: solid; border-color: var(--teal-500); background: rgba(75,157,146,.08); }
+.file-drop--compact { margin-top: 6px; }
+
+.publish-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 25px 0; }
+.publish-options label { position: relative; margin: 0; }
+.publish-options input { position: absolute; opacity: 0; }
+.publish-options label > span { min-height: 88px; display: grid; align-content: center; gap: 4px; padding: 16px 18px 16px 48px; border: 1px solid var(--line); border-radius: 15px; background: #fbfaf6; cursor: pointer; }
+.publish-options label > span::before { content: ""; position: absolute; left: 17px; top: 50%; width: 20px; height: 20px; border: 2px solid #9da7aa; border-radius: 6px; transform: translateY(-50%); }
+.publish-options input:checked + span { border-color: rgba(45,116,111,.4); background: rgba(75,157,146,.08); }
+.publish-options input:checked + span::before { border-color: var(--teal-600); background: var(--teal-600); box-shadow: inset 0 0 0 4px white; }
+.publish-options strong { color: var(--navy-900); }
+.publish-options small { color: var(--muted); font-weight: 600; }
+
+.upload-progress { height: 7px; margin: 0 0 17px; overflow: hidden; border-radius: 999px; background: var(--cream-200); }
+.upload-progress span { display: block; width: 45%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--gold-500), var(--teal-500)); animation: upload-moving 1.2s ease-in-out infinite alternate; }
+@keyframes upload-moving { from { transform: translateX(-30%); } to { transform: translateX(150%); } }
+.admin-submit { width: 100%; }
+
+.admin-library .admin-panel__heading { margin: 0; padding: 38px 38px 25px; border-bottom: 1px solid var(--line); }
+.admin-refresh { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: var(--cream-100); font-size: 1.25rem; }
+.admin-refresh:hover { color: var(--teal-600); transform: rotate(30deg); }
+.admin-library__list { max-height: 760px; overflow: auto; padding: 12px; scrollbar-width: thin; }
+.admin-video-item { display: grid; grid-template-columns: 142px minmax(0, 1fr); gap: 19px; padding: 14px; border-bottom: 1px solid var(--line); }
+.admin-video-item:last-child { border-bottom: 0; }
+.admin-video-item__media { position: relative; min-height: 105px; overflow: hidden; border-radius: 14px; background-image: linear-gradient(145deg, rgba(7,24,35,.85), rgba(38,94,94,.62)), url("assets/faithfinders-hero-mural.png"); background-position: center; background-size: cover; }
+.admin-video-item__media > span { position: absolute; left: 10px; bottom: 9px; padding: 5px 7px; border-radius: 6px; background: rgba(7,24,35,.72); color: white; font-size: .56rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.admin-video-item__copy { min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+.admin-video-item__meta { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 6px; }
+.admin-status-badge { padding: 4px 7px; border-radius: 999px; background: var(--cream-200); color: var(--muted); font-size: .56rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.admin-status-badge.is-published { background: rgba(75,157,146,.13); color: #21635e; }
+.admin-status-badge.is-featured { background: var(--gold-100); color: #805d19; }
+.admin-video-item h3 { overflow: hidden; margin: 0 0 5px; color: var(--navy-900); font-family: Georgia, serif; font-size: 1.2rem; font-weight: 500; text-overflow: ellipsis; white-space: nowrap; }
+.admin-video-item p { margin: 0; color: var(--muted); font-size: .78rem; }
+.admin-video-actions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+.admin-video-actions button { padding: 6px 9px; border: 1px solid var(--line); border-radius: 8px; background: white; color: var(--navy-900); cursor: pointer; font-size: .68rem; font-weight: 850; }
+.admin-video-actions button:hover { border-color: var(--teal-500); color: var(--teal-600); }
+.admin-video-actions .is-danger:hover { border-color: #c7797e; color: #9d2e36; }
+.admin-library__empty { min-height: 420px; display: grid; place-content: center; justify-items: center; padding: 45px; text-align: center; }
+.admin-library__empty > span { width: 64px; height: 64px; display: grid; place-items: center; margin-bottom: 18px; padding-left: 4px; border-radius: 50%; background: var(--navy-950); color: var(--gold-300); }
+.admin-library__empty h3 { margin-bottom: 8px; font-family: Georgia, serif; font-size: 1.7rem; font-weight: 500; }
+.admin-library__empty p { margin: 0; color: var(--muted); }
+
+.admin-toast { position: fixed; right: 25px; bottom: 25px; z-index: 100; max-width: 390px; padding: 16px 20px; border: 1px solid rgba(240,214,150,.32); border-radius: 13px; background: var(--navy-950); color: white; box-shadow: 0 22px 55px rgba(7,24,35,.28); font-size: .86rem; font-weight: 750; }
+.admin-toast.is-error { border-color: #d88c91; background: #541f25; }
+.admin-footer { padding: 26px 0; background: #05141d; color: rgba(255,255,255,.6); font-size: .8rem; }
+.admin-footer .container { display: flex; justify-content: space-between; gap: 25px; }
+.admin-footer a { color: var(--gold-300); }
+
+@media (max-width: 1050px) {
+  .admin-hero__inner { grid-template-columns: 1fr; gap: 35px; }
+  .admin-hero__seal { max-width: 440px; }
+  .admin-grid { grid-template-columns: 1fr; }
+  .admin-library { position: static; }
+}
+
+@media (max-width: 760px) {
+  .admin-header__inner { min-height: 78px; }
+  .admin-site-link { font-size: 0; }
+  .admin-site-link span { font-size: 1rem; }
+  .admin-hero__inner { min-height: 390px; padding-block: 60px; }
+  .admin-hero h1 { font-size: clamp(3.1rem, 14vw, 4.5rem); }
+  .admin-workspace { padding: 48px 0 75px; }
+  .admin-login { grid-template-columns: 1fr; }
+  .admin-setup-steps { grid-template-columns: 1fr; }
+  .admin-setup-steps article { min-height: 0; }
+  .admin-login__visual { min-height: 350px; padding: 40px 30px; }
+  .admin-login__visual > strong { font-size: 3.2rem; }
+  .admin-login__form { padding: 42px 28px; }
+  .dashboard-toolbar { align-items: flex-start; flex-direction: column; }
+  .dashboard-toolbar__actions { width: 100%; flex-wrap: wrap; }
+  .dashboard-toolbar__actions .button { flex: 1; }
+  .admin-stats { grid-template-columns: 1fr; }
+  .admin-stats article { min-height: 95px; }
+  .admin-editor { padding: 28px 22px; }
+  .admin-field-row, .source-picker, .publish-options { grid-template-columns: 1fr; }
+  .admin-library .admin-panel__heading { padding: 28px 24px 22px; }
+  .admin-panel__heading h2 { font-size: 2rem; }
+  .admin-video-item { grid-template-columns: 105px minmax(0, 1fr); gap: 13px; padding: 11px; }
+  .admin-video-item__media { min-height: 100px; }
+  .admin-footer .container { align-items: flex-start; flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .admin-video-item { grid-template-columns: 1fr; }
+  .admin-video-item__media { min-height: 155px; }
+  .admin-toast { left: 14px; right: 14px; bottom: 14px; }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Administrator Portal | FaithFinders Church</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body class="admin-page">
+  <a class="skip-link" href="#admin-main">Skip to administrator portal</a>
+
+  <header class="admin-header">
+    <div class="container admin-header__inner">
+      <a class="brand" href="index.html" aria-label="FaithFinders Church home">
+        <span class="brand-mark" aria-hidden="true"><img src="assets/faithfinders-logo.png" alt="" /></span>
+        <span class="brand-copy"><strong>FaithFinders</strong><small>Administrator</small></span>
+      </a>
+      <a class="admin-site-link" href="watch.html">View public video library <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="admin-main">
+    <section class="admin-hero">
+      <div class="container admin-hero__inner">
+        <div>
+          <p class="eyebrow">FaithFinders media desk</p>
+          <h1>Manage every service <em>in one place.</em></h1>
+          <p>Upload service videos, add Facebook or YouTube links, choose the featured message, and keep the public archive current.</p>
+        </div>
+        <div class="admin-hero__seal" aria-label="Secure administrator area">
+          <span aria-hidden="true">✦</span>
+          <div><strong>Secure access</strong><small>Authorized church administrators only</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="admin-workspace">
+      <div class="container">
+        <div class="admin-notice admin-notice--setup" id="configuration-notice" hidden>
+          <div class="admin-notice__icon" aria-hidden="true">1</div>
+          <div>
+            <h2>Connect the portal to your database</h2>
+            <p>The administrator experience is ready. Complete the steps in <strong>ADMIN-SETUP.txt</strong>, then add the Project URL and publishable key to <strong>supabase-config.js</strong>.</p>
+          </div>
+        </div>
+        <div class="admin-setup-steps" id="configuration-steps" hidden>
+          <article><span>01</span><h3>Prepare storage</h3><p>Run <strong>supabase-setup.sql</strong> once to create the secure video library.</p></article>
+          <article><span>02</span><h3>Authorize an admin</h3><p>Create the church administrator account and add its email using the final SQL statement.</p></article>
+          <article><span>03</span><h3>Connect the site</h3><p>Add the Project URL and publishable key to <strong>supabase-config.js</strong>.</p></article>
+        </div>
+
+        <section class="admin-login" id="login-panel" aria-labelledby="login-title" hidden>
+          <div class="admin-login__visual" aria-hidden="true">
+            <span>FaithFinders</span>
+            <strong>Media<br />Ministry.</strong>
+            <p>Share worship, the Word, and the life of the church—wherever people are.</p>
+          </div>
+          <form class="admin-login__form" id="login-form">
+            <p class="eyebrow">Administrator sign in</p>
+            <h2 id="login-title">Welcome back.</h2>
+            <p>Use the administrator account created for FaithFinders.</p>
+            <label>Email address<input id="admin-email" name="email" type="email" autocomplete="username" required /></label>
+            <label>Password<input id="admin-password" name="password" type="password" autocomplete="current-password" required /></label>
+            <button class="button" type="submit">Sign In Securely</button>
+            <p class="admin-form-status" id="login-status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section class="admin-dashboard" id="admin-dashboard" hidden>
+          <div class="dashboard-toolbar">
+            <div>
+              <p class="eyebrow">Administrator portal</p>
+              <h2>Video library control room</h2>
+              <p id="admin-identity">Signed in</p>
+            </div>
+            <div class="dashboard-toolbar__actions">
+              <a class="button button--outline" href="watch.html" target="_blank" rel="noopener">Preview Library</a>
+              <button class="admin-logout" id="logout-button" type="button">Sign Out</button>
+            </div>
+          </div>
+
+          <div class="admin-stats" aria-label="Video library summary">
+            <article><span>Total videos</span><strong id="stat-total">0</strong></article>
+            <article><span>Published</span><strong id="stat-published">0</strong></article>
+            <article><span>Featured</span><strong id="stat-featured">—</strong></article>
+          </div>
+
+          <div class="admin-grid">
+            <section class="admin-panel admin-editor" aria-labelledby="editor-title">
+              <div class="admin-panel__heading">
+                <div><p class="eyebrow">Add to the archive</p><h2 id="editor-title">Publish a service</h2></div>
+                <button class="admin-text-button" id="cancel-edit" type="button" hidden>Cancel edit</button>
+              </div>
+
+              <form id="video-form">
+                <input id="video-id" type="hidden" />
+                <div class="admin-field-row">
+                  <label>Service title<input id="video-title" type="text" placeholder="Sunday Worship Service" required /></label>
+                  <label>Service date<input id="video-date" type="date" required /></label>
+                </div>
+                <div class="admin-field-row">
+                  <label>Speaker<input id="video-speaker" type="text" value="FaithFinders Church" /></label>
+                  <label>Category<input id="video-category" type="text" value="Sunday Service" /></label>
+                </div>
+                <label>Description<textarea id="video-description" rows="3" placeholder="A short description of this service or message."></textarea></label>
+
+                <fieldset class="source-picker">
+                  <legend>Choose the video source</legend>
+                  <label><input type="radio" name="source-type" value="link" checked /><span><strong>Paste a link</strong><small>Facebook, YouTube, or Vimeo</small></span></label>
+                  <label><input type="radio" name="source-type" value="upload" /><span><strong>Upload a file</strong><small>MP4, WebM, MOV, or OGG</small></span></label>
+                </fieldset>
+
+                <div id="link-fields">
+                  <label>Public video link<input id="video-url" type="url" placeholder="https://www.facebook.com/.../videos/..." /></label>
+                </div>
+                <div id="upload-fields" hidden>
+                  <label class="file-drop">Video file<input id="video-file" type="file" accept="video/mp4,video/webm,video/quicktime,video/ogg" /><span>Select a service video from your computer</span><small>For large files, keep this page open until the upload finishes.</small></label>
+                </div>
+
+                <label class="file-drop file-drop--compact">Optional thumbnail image<input id="thumbnail-file" type="file" accept="image/jpeg,image/png,image/webp" /><span>Add a custom cover image</span><small>JPG, PNG, or WebP</small></label>
+
+                <div class="publish-options">
+                  <label><input id="video-published" type="checkbox" checked /><span><strong>Publish now</strong><small>Show this video in the public archive.</small></span></label>
+                  <label><input id="video-featured" type="checkbox" /><span><strong>Make featured</strong><small>Display this service in the main player.</small></span></label>
+                </div>
+
+                <div class="upload-progress" id="upload-progress" hidden>
+                  <span id="upload-progress-bar"></span>
+                </div>
+                <button class="button admin-submit" id="save-video-button" type="submit">Publish Service</button>
+                <p class="admin-form-status" id="video-form-status" aria-live="polite"></p>
+              </form>
+            </section>
+
+            <section class="admin-panel admin-library" aria-labelledby="library-title">
+              <div class="admin-panel__heading">
+                <div><p class="eyebrow">Current collection</p><h2 id="library-title">Service archive</h2></div>
+                <button class="admin-refresh" id="refresh-videos" type="button" aria-label="Refresh video list">↻</button>
+              </div>
+              <div class="admin-library__list" id="admin-video-list" aria-live="polite"></div>
+              <div class="admin-library__empty" id="admin-video-empty" hidden>
+                <span aria-hidden="true">▶</span>
+                <h3>Your library is ready.</h3>
+                <p>Publish the first service using the form.</p>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <div class="admin-toast" id="admin-toast" role="status" aria-live="polite" hidden></div>
+
+  <footer class="admin-footer">
+    <div class="container"><span>FaithFinders Church · Constantine, Michigan</span><a href="index.html">Return to website</a></div>
+  </footer>
+
+  <script src="supabase-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@
   <title>Service Times | FaithFinders Church</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="service-times-page">
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <div class="announcement">
@@ -20,9 +20,7 @@
   <header class="site-header" id="top">
     <div class="container nav-wrap">
       <a class="brand" href="index.html" aria-label="FaithFinders Church home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 48 48" role="img"><path d="M24 5v38M12 17h24" /><circle cx="24" cy="24" r="20" /></svg>
-        </span>
+        <span class="brand-mark" aria-hidden="true"><img src="assets/faithfinders-logo.png" alt="" /></span>
         <span class="brand-copy"><strong>FaithFinders</strong><small>Church</small></span>
       </a>
 
@@ -45,6 +43,21 @@
             <a href="service-times.html" aria-current="page">
               <strong>Service Times</strong>
               <small>Find a gathering and plan your visit.</small>
+            </a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown__toggle" type="button" aria-expanded="false" aria-haspopup="true">
+            Watch <span aria-hidden="true">⌄</span>
+          </button>
+          <div class="nav-dropdown__menu">
+            <a href="watch.html#live">
+              <strong>Live Stream</strong>
+              <small>Join a FaithFinders service online.</small>
+            </a>
+            <a href="watch.html#archive">
+              <strong>Past Services</strong>
+              <small>Watch messages and services on demand.</small>
             </a>
           </div>
         </div>
@@ -78,16 +91,14 @@
           <article class="service-card service-card--featured reveal">
             <div class="service-card__day">Sunday</div>
             <div class="service-card__list">
-              <div><span>9:30 AM</span><h3>Sunday School</h3><p>A time to learn, ask questions, and grow together in God’s Word.</p></div>
-              <div><span>11:00 AM</span><h3>Worship Service</h3><p>Join us for expressive worship, prayer, biblical preaching, and church family.</p></div>
-              <div><span>6:30 PM</span><h3>Evening Worship</h3><p>Gather again for worship, encouragement, and time in God’s presence.</p></div>
+              <div><span>10:15 AM – 12:15 PM</span><h3>Sunday Morning Service</h3><p>Join us for expressive worship, prayer, biblical preaching, and time with the church family.</p></div>
             </div>
           </article>
 
           <article class="service-card reveal">
-            <div class="service-card__day">Thursday</div>
+            <div class="service-card__day">Wednesday</div>
             <div class="service-card__list">
-              <div><span>6:30 PM</span><h3>Bible Study &amp; Worship</h3><p>A midweek opportunity to study Scripture, worship, pray, and be strengthened in faith.</p></div>
+              <div><span>6:30 PM – 8:30 PM</span><h3>Wednesday Night Bible Study</h3><p>A midweek opportunity to study Scripture, pray, ask questions, and grow together in faith.</p></div>
             </div>
           </article>
         </div>
@@ -138,7 +149,7 @@
     <div class="container footer-grid">
       <div>
         <a class="brand brand--footer" href="index.html">
-          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5v38M12 17h24"/><circle cx="24" cy="24" r="20"/></svg></span>
+          <span class="brand-mark" aria-hidden="true"><img src="assets/faithfinders-logo.png" alt="" /></span>
           <span class="brand-copy"><strong>FaithFinders</strong><small>Church</small></span>
         </a>
         <p>A welcoming community centered on Jesus Christ, people, and relationships.</p>
@@ -148,6 +159,8 @@
         <a href="about-us.html">About Us</a>
         <a href="vision.html">Our Vision</a>
         <a href="service-times.html">Service Times</a>
+        <a href="watch.html#live">Watch Live</a>
+        <a href="watch.html#archive">Past Services</a>
         <a href="give.html">Give</a>
         <a href="index.html#contact">Contact</a>
       </div>
@@ -155,6 +168,8 @@
         <h3>Connect</h3>
         <a href="tel:+12694357474">(269) 435-7474</a>
         <a href="mailto:rgafaithfinder@yahoo.com">Email the Church</a>
+        <a href="https://www.facebook.com/faithfinderschurchmi" target="_blank" rel="noopener">Facebook</a>
+        <a href="admin.html">Administrator Portal</a>
         <span>Constantine, Michigan</span>
       </div>
     </div>
