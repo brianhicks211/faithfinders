@@ -101,3 +101,4 @@ No online payment URL was supplied, so the Give page directs visitors to contact
 Brand asset
 -----------
 assets/faithfinders-logo.png — FaithFinders logo used in all page headers and footers.
+assets/pastors-rita-and-paul-slone.jpg — Portrait of Pastors Rita and Paul Slone used on the About page.

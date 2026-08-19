@@ -247,6 +247,22 @@ textarea { resize: vertical; }
 .mission-card { padding: 42px 34px; border: 1px solid rgba(24,48,62,.1); border-radius: var(--radius-md); background: rgba(255,255,255,.72); }
 .mission-card__icon { width: 55px; height: 55px; margin-bottom: 28px; display: grid; place-items: center; border-radius: 50%; background: var(--navy-950); color: var(--gold-300); font-weight: 900; }
 .mission-card p { margin-bottom: 0; color: var(--muted); }
+.pastors-section { overflow: hidden; background: linear-gradient(145deg, #fff 0%, var(--cream-100) 58%, #eee5d2 100%); }
+.pastors-grid { display: grid; grid-template-columns: minmax(320px, .78fr) minmax(0, 1.22fr); gap: 88px; align-items: center; }
+.pastors-portrait { position: relative; margin: 0; }
+.pastors-portrait::before { content: ""; position: absolute; z-index: 0; width: 220px; height: 220px; left: -75px; top: -55px; border: 42px solid rgba(215,165,72,.17); border-radius: 50%; }
+.pastors-portrait::after { content: ""; position: absolute; z-index: 0; right: -20px; bottom: 75px; width: 4px; height: 180px; border-radius: 999px; background: linear-gradient(transparent, var(--gold-500), transparent); }
+.pastors-portrait img { position: relative; z-index: 1; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 42%; border: 1px solid rgba(215,165,72,.32); border-radius: var(--radius-lg); background: var(--navy-950); box-shadow: 0 34px 80px rgba(7,24,35,.2); }
+.pastors-portrait figcaption { position: relative; z-index: 2; width: calc(100% - 40px); margin: -62px auto 0; padding: 22px 25px; display: grid; gap: 3px; border: 1px solid rgba(240,214,150,.25); border-radius: 18px; background: rgba(7,24,35,.94); color: white; box-shadow: 0 18px 42px rgba(7,24,35,.22); text-align: center; backdrop-filter: blur(15px); }
+.pastors-portrait figcaption span { color: var(--gold-300); font-size: .66rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+.pastors-portrait figcaption strong { font-family: Georgia, serif; font-size: 1.35rem; font-weight: 500; }
+.pastors-copy > p:not(.eyebrow) { max-width: 650px; color: var(--muted); font-size: 1.07rem; }
+.pastors-copy h2 { max-width: 720px; }
+.pastors-signature { max-width: 520px; margin-top: 34px; padding-top: 26px; display: flex; align-items: center; gap: 17px; border-top: 1px solid var(--line); }
+.pastors-signature > span { width: 46px; height: 46px; flex: 0 0 46px; display: grid; place-items: center; border: 1px solid rgba(215,165,72,.4); border-radius: 50%; color: var(--gold-500); background: white; }
+.pastors-signature p { margin: 0; display: grid; }
+.pastors-signature strong { color: var(--navy-900); font-family: Georgia, serif; font-size: 1.18rem; font-weight: 500; }
+.pastors-signature small { color: var(--muted); font-size: .78rem; }
 .belief-grid { display: grid; grid-template-columns: .82fr 1fr; gap: 95px; align-items: start; }
 .belief-intro { position: sticky; top: 145px; }
 .belief-list { display: grid; border-top: 1px solid var(--line); }
@@ -268,6 +284,8 @@ textarea { resize: vertical; }
 @media (max-width: 980px) {
   .story-grid, .belief-grid { grid-template-columns: 1fr; gap: 55px; }
   .mission-grid { grid-template-columns: 1fr; }
+  .pastors-grid { grid-template-columns: minmax(0, 1fr); gap: 52px; }
+  .pastors-portrait { width: min(620px, 100%); margin-inline: auto; }
   .belief-intro { position: static; }
   .about-connect__card { grid-template-columns: 1fr; align-items: start; }
 }
@@ -280,6 +298,11 @@ textarea { resize: vertical; }
   .story-panel { min-height: 420px; }
   .story-panel__quote { left: 18px; right: 18px; bottom: 18px; padding: 20px; }
   .mission-card { padding: 34px 26px; }
+  .pastors-grid { gap: 42px; }
+  .pastors-portrait img { border-radius: 22px; }
+  .pastors-portrait figcaption { width: calc(100% - 24px); margin-top: -48px; padding: 18px 16px; }
+  .pastors-portrait figcaption strong { font-size: 1.18rem; }
+  .pastors-signature { margin-top: 26px; }
   .belief-item { grid-template-columns: 45px 1fr; gap: 14px; }
   .about-connect__card { padding: 42px 27px; }
 }
